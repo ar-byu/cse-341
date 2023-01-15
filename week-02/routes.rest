@@ -1,1 +1,3 @@
-GET http://localhost:8080/professional
+GET http://localhost:8080/contacts
+###
+GET http://localhost:8080/contacts/63c3373cab80ee338786ed78
