@@ -1,3 +1,38 @@
 GET http://localhost:8080/contacts
 ###
 GET http://localhost:8080/contacts/63c3373cab80ee338786ed78
+###
+POST http://localhost:8080/contacts HTTP/1.1
+content-type: application/json 
+
+{
+    "firstName": "Russell", 
+    "lastName": "Rector", 
+    "email": "testemail@test.com", 
+    "favoriteColor": "Green",
+    "birthday":"May 26"
+}
+###
+PUT http://localhost:8080/contacts/63c99b20ca893261d5af5ed8 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Russell", 
+    "lastName": "Rector", 
+    "email": "mcfaxr2@gmail.com", 
+    "favoriteColor": "Green",
+    "birthday":"May 26"
+}
+### A POST request to so that there's a record to delete
+POST http://localhost:8080/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "A",
+    "lastName": "Test",
+    "email": "none",
+    "favoriteColor": "none",
+    "birthday": "none"
+}
+###
+DELETE http://localhost:8080/contacts/63c9a2d2bb809875d954ec0d
