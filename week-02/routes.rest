@@ -6,11 +6,11 @@ POST http://localhost:8080/contacts HTTP/1.1
 content-type: application/json 
 
 {
-    "firstName": "Russell", 
+    "firstName": "Bethany", 
     "lastName": "Rector", 
     "email": "testemail@test.com", 
-    "favoriteColor": "Green",
-    "birthday":"May 26"
+    "favoriteColor": "Purple",
+    "birthday":"April 25"
 }
 ###
 PUT http://localhost:8080/contacts/63c99b20ca893261d5af5ed8 HTTP/1.1
@@ -20,7 +20,7 @@ content-type: application/json
     "firstName": "Russell", 
     "lastName": "Rector", 
     "email": "mcfaxr2@gmail.com", 
-    "favoriteColor": "Green",
+    "favoriteColor": "Red",
     "birthday":"May 26"
 }
 ### A POST request to so that there's a record to delete
@@ -35,4 +35,4 @@ content-type: application/json
     "birthday": "none"
 }
 ###
-DELETE http://localhost:8080/contacts/63c9a2d2bb809875d954ec0d
+DELETE http://localhost:8080/contacts/63cc5ec935dce61fe65d5cc8
