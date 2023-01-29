@@ -10,7 +10,7 @@ const doc = {
     },
     // host: 'localhost:8080',
     host: 'cse-341-project.onrender.com',
-    schemes: ['http'],
+    schemes: ['https'],
   };
 
 swaggerAutogen(outputFile, endpointsFiles, doc)
