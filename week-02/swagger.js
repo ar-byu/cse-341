@@ -9,7 +9,7 @@ const doc = {
       description: 'an API and contacts list',
     },
     // host: 'localhost:8080',
-    host: 'https://cse-341-project.onrender.com',
+    host: 'cse-341-project.onrender.com',
     schemes: ['http'],
   };
 
