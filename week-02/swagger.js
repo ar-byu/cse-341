@@ -8,7 +8,8 @@ const doc = {
       title: 'My Contacts API',
       description: 'an API and contacts list',
     },
-    host: 'localhost:8080',
+    // host: 'localhost:8080',
+    host: 'https://cse-341-project.onrender.com',
     schemes: ['http'],
   };
 
