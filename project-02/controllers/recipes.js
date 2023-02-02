@@ -32,7 +32,7 @@ const addRecipe = async (req, res) => {
       source: req.body.source,
       rating: req.body.rating
     }
-    const response = await mongodb.getDb().db().collection('recipe').insertOne(recipe);
+    const response = await mongodb.getDb().db().collection('recipes').insertOne(recipe);
     if (response.acknowledged) {
       res.status(201).json(response);
     } else {
