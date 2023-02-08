@@ -9,4 +9,8 @@ router.get('/:id', recipesController.getSingle);
 
 router.post('/', recipesController.addRecipe);
 
+router.put('/:id', recipesController.updateRecipe);
+
+router.delete('/:id', recipesController.deleteRecipe);
+
 module.exports = router;

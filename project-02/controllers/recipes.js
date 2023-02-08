@@ -36,9 +36,38 @@ const addRecipe = async (req, res) => {
     if (response.acknowledged) {
       res.status(201).json(response);
     } else {
-      res.status(500).json(response.error || 'An error occured while creating the contact. Please try again.')
+      res.status(500).json(response.error || 'An error occured while trying to create the recipe. Please try again.')
     }
   }
 
+const updateRecipe = async (req, res) => {
+  const recipeId = new ObjectId(req.params.id);
+  const recipe = {
+    title: req.body.title,
+    course: req.body.course,
+    region: req.body.region,
+    difficulty: req.body.difficulty,
+    cookTime: req.body.cookTime,
+    source: req.body.source,
+    rating: req.body.rating
+  }
+  const response = await mongodb.getDb().db().collection('recipes').replaceOne({_id: recipeId}, recipe);
 
-module.exports = {getAll, getSingle, addRecipe};
+  if (response.modifiedCount > 0) {
+    res.status(204).send();
+  } else {
+    es.status(500).json(response.error || 'An error occured while trying to update the recipe. Please try again.')
+  }
+}
+
+const deleteRecipe = async (req, res) => {
+  const recipeId = new ObjectId(req.params.id);
+  const response = await mongodb.getDb().db().collection('recipes').deleteOne({_id: recipeId});
+  if (response.deletedCount > 0) {
+    res.status(204).send();
+  } else {
+    res.status(500).json(response.error || 'An error occured while trying to delete the recipe. Please try again.')
+  }
+}
+
+module.exports = {getAll, getSingle, addRecipe, updateRecipe, deleteRecipe};
