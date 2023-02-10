@@ -1,0 +1,27 @@
+POST http://localhost:8080/recipes HTTP/1.1
+content-type: application/json 
+
+{
+    "title": "Recipe",
+    "course": "Course",
+    "region": "Region",
+    "difficulty": "Difficulty"
+    
+}
+###
+PUT http://localhost:8080/recipes/63dc1b7ad0e24ab998c89bc8 HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Cannoli Pancakes",
+    "course": "Dessert",
+    "region": "North America"
+
+}
+###
+PUT http://localhost:8080/recipes/63dc1b7ad54dab998c89ab5 HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Title"
+}
