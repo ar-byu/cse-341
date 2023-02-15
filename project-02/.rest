@@ -25,3 +25,5 @@ content-type: application/json
 {
     "title": "Title"
 }
+###
+GET http://localhost:8080/shopping-list
