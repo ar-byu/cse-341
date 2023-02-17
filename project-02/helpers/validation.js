@@ -10,3 +10,8 @@ exports.saveRecipe = [
     check('rating', 'Rating is required').not().isEmpty(),
     
 ]
+
+exports.saveListItem = [
+    check('item', 'Item name is required').not().isEmpty(),
+    check('amount', 'Amount is required').not().isEmpty(),
+]
