@@ -51,4 +51,29 @@ const addItem = async (req, res) => {
   }
 }
 
-module.exports = { getAll, getSingle, addItem }
+const updateItem = async (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).send("Must use a valid recipe ID to update a recipe.")
+  }
+
+  const itemId = new ObjectId(req.params.id);
+  const item = {
+    item: req.body.item,
+    amount: req.body.amount,
+    recipe: req.body.recipe
+  }
+  const errors = validationResult(req);
+  if (errors.isEmpty())
+    {const response = await mongodb.getDb().db().collection('shopping-list').replaceOne({_id: itemId}, item);
+
+    if (response.modifiedCount > 0) {
+      res.status(204).send();
+    } else {
+      res.status(500).json(response.error || 'An error occured while trying to update the item. Please try again.')
+    }
+  } else {
+    res.status(500).json(errors)
+  }
+}
+
+module.exports = { getAll, getSingle, addItem, updateItem }

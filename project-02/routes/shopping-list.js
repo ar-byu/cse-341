@@ -13,4 +13,6 @@ router.get('/:id', shoppingListController.getSingle)
 
 router.post('/', validation.saveListItem, shoppingListController.addItem)
 
+router.put('/:id', validation.saveListItem, shoppingListController.updateItem)
+
 module.exports = router;

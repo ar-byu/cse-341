@@ -43,3 +43,12 @@ content-type:  application/json
 {
     "amount": "1"
 }
+###
+PUT http://localhost:8080/shopping-list/63eec3a3db535c6c9ac5c699 HTTP/1.1
+content-type: application/json
+
+{
+    "item": "Ground beef",
+    "amount": "Two pounds",
+    "recipe": "Lebanese Kafta Kebabs"
+}
