@@ -53,7 +53,7 @@ const addItem = async (req, res) => {
 
 const updateItem = async (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
-    res.status(400).send("Must use a valid recipe ID to update a recipe.")
+    res.status(400).send("Must use a valid item ID to update an item.")
   }
 
   const itemId = new ObjectId(req.params.id);
@@ -76,4 +76,17 @@ const updateItem = async (req, res) => {
   }
 }
 
-module.exports = { getAll, getSingle, addItem, updateItem }
+const deleteItem = async (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).send("Must use a valid item ID to delete an item.")
+  }
+  const itemId = new ObjectId(req.params.id);
+  const response = await mongodb.getDb().db().collection('shopping-list').deleteOne({_id: itemId});
+  if (response.deletedCount > 0) {
+    res.status(204).send();
+  } else {
+    res.status(500).json(response.error || 'An error occured while trying to delete the item. Please try again.')
+  }
+}
+
+module.exports = { getAll, getSingle, addItem, updateItem, deleteItem }

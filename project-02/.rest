@@ -32,9 +32,9 @@ POST http://localhost:8080/shopping-list HTTP/1.1
 content-type: application/json
 
 {
-    "item": "Ground beef",
-    "amount": "1 pound",
-    "recipe": "Lebanese Kafta Kebabs"
+    "item": "Any",
+    "amount": "Any",
+    "recipe": "Any"
 }
 ###
 POST http://localhost:8080/shopping-list HTTP/1.1
@@ -52,3 +52,5 @@ content-type: application/json
     "amount": "Two pounds",
     "recipe": "Lebanese Kafta Kebabs"
 }
+###
+DELETE http://localhost:8080/shopping-list/63eec60f075bc16cbe8ec9d6
