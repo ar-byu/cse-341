@@ -8,10 +8,10 @@ const doc = {
       title: 'Project 2',
       description: 'CSE 341 Project 2',
     },
-    host: 'localhost:8080',
-    schemes: ['http']
-    //host: 'cse-341-project-02.onrender.com',
-    //schemes: ['https']
+    //host: 'localhost:8080',
+    //schemes: ['http']
+    host: 'cse-341-project-02.onrender.com',
+    schemes: ['https']
   };
 
 swaggerAutogen(outputFile, endpointsFiles, doc)
