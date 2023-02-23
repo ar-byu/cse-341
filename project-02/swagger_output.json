@@ -10,18 +10,6 @@
   "schemes": [
     "http"
   ],
-  "securityDefinitions": {
-    "oauth": {
-      "type": "oauth2",
-      "authorizationUrl": "localhost:8080/api-doc/",
-      "flow": "password",
-      "scopes": {
-        "post:recipes": "Write recipe",
-        "put:recipes": "Update recipe",
-        "delete:recipes": "Delete recipe"
-      }
-    }
-  },
   "paths": {
     "/recipes/": {
       "get": {
@@ -80,10 +68,7 @@
           "500": {
             "description": "Internal Server Error"
           }
-        },
-        "security": [
-          "write:recipe"
-        ]
+        }
       }
     },
     "/recipes/{id}": {
@@ -159,10 +144,7 @@
           "500": {
             "description": "Internal Server Error"
           }
-        },
-        "security": [
-          "write:recipe"
-        ]
+        }
       },
       "delete": {
         "description": "",
@@ -184,10 +166,7 @@
           "500": {
             "description": "Internal Server Error"
           }
-        },
-        "security": [
-          "write:recipe"
-        ]
+        }
       }
     },
     "/shopping-list/": {
@@ -232,10 +211,7 @@
           "500": {
             "description": "Internal Server Error"
           }
-        },
-        "security": [
-          "write:recipe"
-        ]
+        }
       }
     },
     "/shopping-list/{id}": {
@@ -299,10 +275,7 @@
           "500": {
             "description": "Internal Server Error"
           }
-        },
-        "security": [
-          "write:recipe"
-        ]
+        }
       },
       "delete": {
         "description": "",
@@ -324,10 +297,7 @@
           "500": {
             "description": "Internal Server Error"
           }
-        },
-        "security": [
-          "write:recipe"
-        ]
+        }
       }
     }
   }
